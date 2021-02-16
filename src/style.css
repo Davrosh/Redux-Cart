@@ -1,0 +1,42 @@
+/*
+    Font
+*/
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700&display=swap");
+/*
+    Grid
+*/
+/*
+    1140px - development standard
+*/
+/*
+    Misc.
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Catamaran", sans-serif;
+  padding: 3rem;
+}
+
+::selection {
+  background-color: blue;
+  color: #fff;
+}
+
+/*
+    Nav
+*/
+
+/*# sourceMappingURL=style.css.map */
