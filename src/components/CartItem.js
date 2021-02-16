@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { removeItem, toggleAmount } from "../actions";
 
 const CartItem = ({ img, title, price, amount, remove, toggle }) => {
+
   return (
     <div className="cart-item">
       <img src={img} alt={title} />
@@ -53,6 +54,8 @@ const CartItem = ({ img, title, price, amount, remove, toggle }) => {
     </div>
   );
 };
+
+
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const { id } = ownProps;

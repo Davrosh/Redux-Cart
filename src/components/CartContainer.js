@@ -3,15 +3,36 @@ import CartItem from "./CartItem";
 
 import { connect } from "react-redux";
 
-import { clearCart, getTotals } from "../actions";
+import { clearCart, getTotals, requestDisplayItems } from "../actions";
 
-
-const CartContainer = ({ dispatch, total, cart = [] }) => {
+const CartContainer = ({ loading, error, dispatch, total, cart = [] }) => {
   useEffect(() => {
-    dispatch(getTotals())
-  }, [cart, dispatch])
-  
+    dispatch(getTotals());
+  }, [cart, dispatch]);
 
+  useEffect(() => {
+    dispatch(requestDisplayItems());
+  }, [dispatch]);
+
+  if (loading) {
+    return (
+      <section className="cart">
+        <header>
+          <h2>loading...</h2>
+        </header>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="cart">
+        <header>
+          <h2>error!</h2>
+        </header>
+      </section>
+    );
+  }
 
   if (cart.length === 0) {
     return (
@@ -61,6 +82,8 @@ const mapStateToProps = (state) => {
   return {
     cart: state.cart,
     total: state.total,
+    loading: state.loading,
+    error: state.error,
   };
 };
 
