@@ -17,7 +17,7 @@ const CartContainer = ({ loading, error, dispatch, total, cart = [] }) => {
   if (loading) {
     return (
       <section className="cart">
-        <header>
+        <header className="cart__header">
           <h2>loading...</h2>
         </header>
       </section>
@@ -27,7 +27,7 @@ const CartContainer = ({ loading, error, dispatch, total, cart = [] }) => {
   if (error) {
     return (
       <section className="cart">
-        <header>
+        <header className="cart__header">
           <h2>error!</h2>
         </header>
       </section>
@@ -38,8 +38,8 @@ const CartContainer = ({ loading, error, dispatch, total, cart = [] }) => {
     return (
       <section className="cart">
         {/* cart header */}
-        <header>
-          <h2>your bag</h2>
+        <header className="cart__header">
+          <h2 >your bag</h2>
           <h4 className="empty-cart">is currently empty</h4>
         </header>
       </section>
@@ -48,21 +48,21 @@ const CartContainer = ({ loading, error, dispatch, total, cart = [] }) => {
   return (
     <section className="cart">
       {/* cart header */}
-      <header>
+      <header className="cart__header">
         <h2>your bag</h2>
       </header>
       {/* cart items */}
-      <article>
+      <article className="cart__container">
         {cart.map((item) => {
           return <CartItem key={item.id} {...item} />;
         })}
       </article>
       {/* cart footer */}
-      <footer>
+      <footer className="cart__footer">
         <hr />
-        <div className="cart-total">
+        <div className="cart__total">
           <h4>
-            total <span>${total}</span>
+            total <span className="cart__amount">${total}</span>
           </h4>
         </div>
         <button

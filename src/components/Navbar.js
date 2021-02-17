@@ -2,7 +2,15 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-const Navbar = ({amount}) => {
+const Navbar = ({amount, loading, error}) => {
+
+  if(loading || error) {
+    return (
+      <nav>
+      </nav>
+    )
+  }
+
   return (
     <nav>
       <div className="nav-center">
@@ -21,7 +29,7 @@ const Navbar = ({amount}) => {
 };
 
 const mapStateToProps = (state) => {
-  return { amount: state.amount };
+  return { amount: state.amount, loading: state.loading, error:state.error };
 };
 
 export default connect(mapStateToProps)(Navbar);

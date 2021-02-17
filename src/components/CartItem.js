@@ -7,10 +7,10 @@ const CartItem = ({ img, title, price, amount, remove, toggle }) => {
 
   return (
     <div className="cart-item">
-      <img src={img} alt={title} />
-      <div>
-        <h4>{title}</h4>
-        <h4 className="item-price">${price}</h4>
+      <img src={img} alt={title} className="cart-item__img"/>
+      <div className="cart-item__desc">
+        <h4 className="cart-item__title">{title}</h4>
+        <h4 className="cart-item__item-price">${price}</h4>
         {/* remove button */}
         <button
           className="remove-btn"
@@ -21,7 +21,7 @@ const CartItem = ({ img, title, price, amount, remove, toggle }) => {
           remove
         </button>
       </div>
-      <div>
+      <div className="cart-item__amount">
         {/* increase amount */}
         <button
           className="amount-btn"
