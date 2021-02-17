@@ -1,6 +1,6 @@
-$color-primary: blue;
-$color-primary-light: lighten(blue, 10%);
-$color-primary-dark: darken(blue, 10%);
+$color-primary: rgb(40, 108, 255);
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
 
 
 
@@ -81,6 +81,10 @@ body {
     font-family: $ff-primary;
 
     padding: 3rem;
+
+    font-size: $default-font-size;
+
+    background-color: $color-grey-light-2;
 }
 
 ::selection {
@@ -93,20 +97,41 @@ body {
 */
 
 nav {
+    padding: 0 2rem;
+    background-color: $color-primary;
+    color: $color-white;
     .nav-center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         &__title {
-
+            font-size: 6rem;
         }
 
-        .pic_container {
-            svg {
 
+        .pic-container {
+            position: relative;
+            svg {
+                height: 6rem;
+                width: 6rem;
+                fill: $color-white;
             }
 
             &__amount-container {
-                p {
-                    
-                }
+                position: absolute;
+                top: 0;
+                right: -20%;
+                background-color: $color-primary-light;
+                border-radius: 50%;
+                height: 3rem;
+                width: 3rem;
+                display: flex;
+                justify-content: center;
+            }
+
+
+            &__total-amount {
+
             }
         }
     }
